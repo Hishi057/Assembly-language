@@ -4,7 +4,7 @@
 int main() {
     printf("Hello, World!\n");
 
-    int result = sum(20, 20);
+    int result = abs(-30);
     printf("%d", result);
     return 0;
 }
