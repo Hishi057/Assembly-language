@@ -5,3 +5,11 @@
 電卓を作ることを目標に頑張る。
 
 [講義資料](https://gondow.github.io/linux-x86-64-programming/1-pre.html)
+
+## コマンド
+
+`gcc -S hoge.c` c言語のファイルを、アセンブリ言語へ変換
+
+`gcc -c hoge.s` アセンブリ言語のファイルを、o形式に変換
+
+`gcc -g hoge.s` a.outに出力。関数名をmainにするのを忘れないこと
