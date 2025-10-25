@@ -13,3 +13,10 @@
 `gcc -c hoge.s` アセンブリ言語のファイルを、o形式に変換
 
 `gcc -g hoge.s` a.outに出力。関数名をmainにするのを忘れないこと
+
+## lldb(デバッグ)コマンド
+
+`lldb ./a.out` デバッグモードでファイルを実行
+`b main` main関数が開始したところにbreakpointを設置
+`si` 次の行を実行する
+`reg read <レジスタ>` レジスタの値を読み取る

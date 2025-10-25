@@ -1,14 +1,13 @@
-	.section	__TEXT,__text,regular,pure_instructions
-	.build_version macos, 26, 0	sdk_version 26, 0
-	.globl	_main
-	.p2align	4, 0x90
+    .data
+x:
+    .quad 9
+
+    .text
+    .globl _main
 _main:
-	pushq	%rbp
-	movq	%rsp, %rbp
-
-	movl	%edi, -4(%rbp)
-	movl	-4(%rbp), %eax
-	addl	$6, %eax
-
-	popq	%rbp
-	retq
+    pushq $7
+    pushq $8
+    movq (%rsp), %rax
+    movq 8(%rsp), %rbx
+    movq x(%rip), %rcx
+    ret

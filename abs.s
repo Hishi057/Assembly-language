@@ -1,23 +1,20 @@
-	.section	__TEXT,__text,regular,pure_instructions
-	.build_version macos, 26, 0	sdk_version 26, 0
-	.globl	_abs
-	.p2align	4, 0x90
-_abs:
-	pushq	%rbp
-	movq	%rsp, %rbp
+# if文を理解するため
+# 絶対値関数
 
-    # 返り値に基の引数をセット
-    movl %edi, %eax
+.text
+.global _my_abs
+_my_abs:
+    mov %rdi, %rax
+    cmp $0, %rax
+    jg THEN # 0 < %rdi ならば
+    jmp ELSE
 
-    # 0 < n ならば
-    cmpl $0, %edi
-	jle .LEND
+THEN:
+    jmp ENDIF
 
-.NEGATIVE:
-    negl %eax
+ELSE:
+    neg %rax
+    jmp ENDIF
 
-.LEND:
-	popq	%rbp
-	retq
-
-
+ENDIF:
+    ret
